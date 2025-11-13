@@ -4,7 +4,7 @@ const connectDB = require('./config/db');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpecs = require('./swagger.js');
-
+console.log("Swagger Specs:", swaggerSpecs);
 // Load env vars
 dotenv.config();
 
@@ -42,7 +42,7 @@ app.use('/api/v1/ai', aiRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 const server = app.listen(
   PORT,
